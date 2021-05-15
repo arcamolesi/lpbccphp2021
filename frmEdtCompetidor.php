@@ -31,7 +31,7 @@
 <body>
     <div class="container grey lighten-4 col s12">
         <div class="brown lighten-4 col s12">
-            <h3>Editar Competidor</h3>
+            <h3 class="align center">Editar Competidor</h3>
         </div>
         <div class="row">
             <form action="edtCompetidor.php" method="POST" id="frmEdtCompetidor" class="col s12">
