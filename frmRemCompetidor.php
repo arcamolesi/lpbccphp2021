@@ -1,4 +1,6 @@
 <?php //frmRemCompetidor.php
+    include 'menu.php'; 
+
    // recuperar valor pelo método GET
     if (isset($_GET['id']))
        $id = $_GET['id']; 
@@ -35,7 +37,7 @@
   <body> 
      <div class="container grey lighten-4 col s12">
         <div class="brown lighten-4 col s12">
-            <h3>Remover Competidor</h3>
+            <h3 class="align center">Remover Competidor</h3>
         </div>
         <form action="remCompetidor.php" method="POST" id="frmRemCompetidor" class="col s12">
 

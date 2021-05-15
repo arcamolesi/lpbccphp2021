@@ -1,4 +1,6 @@
 <?php
+    include 'menu.php';
+
     include 'conexao.php'; 
     $pdo = Conexao::conectar(); 
     $sql = "Select  * from competidor order by nome"; 
@@ -24,8 +26,7 @@
     <title>Listar Competidores</title>
 </head>
 <body>   
-  <div class="container">
-  <div class="row">
+     <div class="container grey lighten-4 col s12">
      
       <div class="brown lighten-4 col s12">
             <h3 class="align center">Listar Competidores   
@@ -33,7 +34,7 @@
                 onclick="JavaScript:location.href='frmInsCompetidor.php'">
                 <i class="material-icons">add</i></a>
             </h3>
-    </div>
+     </div>
 
     <table class="striped" class="responsive-table">
         <tr class="solid orange black-text text-dark-4 align center">
@@ -76,8 +77,6 @@
     
     </table>
     <h6>Quantidade de Registros impressos: <?php echo $cont;?></h6>
-    </div>
-
     </div>
 </body>
 </html> 

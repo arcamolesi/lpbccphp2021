@@ -1,4 +1,5 @@
 <?php 
+    include 'menu.php';
    // recuperar valor pelo método GET
     $id = $_GET['id']; 
 
