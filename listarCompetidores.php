@@ -35,13 +35,14 @@
     </h4>
 
     <table class="striped" class="responsive-table">
-        <tr class="solid orange green-text text-lighten-3">
+        <tr class="solid orange black-text text-dark-4 align center">
             <th>ID</th>
             <th>NOME</th>
             <th>CIDADE</th>
-            <th>ESTADO</th>
-            <th>IDADE</th>
-            <th>SOMA NOTA</th>
+            <th class="align center">ESTADO</th>
+            <th class="align center">IDADE</th>
+            <th class="align center">SOMA NOTA</th>
+            <th colspan="2" class="align center">FUNÇÃO</th>
         </tr>
 
         <?php 
@@ -53,9 +54,20 @@
                 <td><?php echo $competidor['id']  ?></td>
                 <td><?php echo $competidor['nome']  ?></td>
                 <td><?php echo $competidor['cidade']  ?></td>
-                <td><?php echo $competidor['estado']  ?></td>
-                <td><?php echo $competidor['idade']  ?></td>
-                <td class="center-align"><?php echo $competidor['somanota']  ?></td>
+                <td class="align center"><?php echo $competidor['estado']  ?></td>
+                <td class="align center"><?php echo $competidor['idade']  ?></td>
+                <td class="align center"><?php echo $competidor['somanota']  ?></td>
+                <td><a class="btn-floating btn-small waves-effect waves-light amber"
+                        onclick="JavaScript:location.href ='frmEdtCompetidor.php?id=' +
+                        <?php echo $competidor['id'];?>">
+                        <i class="material-icons">edit</i>
+                </td>
+                <td><a class="btn-floating btn-small waves-effect waves-light red"
+                        onclick="JavaScript:location.href ='frmRemCompetidor.php?id=' +
+                        <?php echo $competidor['id'];?>">
+                        <i class="material-icons">delete</i>
+               </td>
+
             </tr>
         <?php
             $cont++;}
@@ -67,4 +79,4 @@
     </div>
     </div>
 </body>
-</html>
+</html> 
