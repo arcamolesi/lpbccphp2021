@@ -18,9 +18,9 @@
   </head>
   <body> 
      <!--Menu de Navegação-->  
-    <nav class=" brown darken-2"> 
+    <nav class=" brown lighten-1"> 
      <div class="nav-wrapper">
-      <a href="#" class="brand-logo right"><img width="70" src="imagens/logo.png"></a>
+      <a href="#" class="brand-logo right"><img width="60" src="imagens/logo3.png"></a>
       <ul id="nav-mobile" class="left hide-on-med-and-down">
         <li><a href="listarCompetidores.php">Competidor</a></li>
         <li><a href="badges.html">Components</a></li>
@@ -34,7 +34,7 @@
     <ul id="slide-out" class="sidenav">
     <li><div class="user-view">
       <div class="background">
-        <img src="imagens/empresa.jpg">
+        <img src="imagens/empresa2.jpeg">
       </div>
       <a href="#user"><img class="circle" src="imagens/perfil.jpg"></a>
       <a href="#name"><span class="white-text name">Almir Camolesi</span></a>
