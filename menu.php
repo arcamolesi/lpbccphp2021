@@ -1,3 +1,10 @@
+//verificar se o usuario tem acesso
+<?php
+ session_start(); 
+   if (!isset($_SESSION['usuario']))
+       Header("Location: index.php");   
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -24,7 +31,7 @@
       <ul id="nav-mobile" class="left hide-on-med-and-down">
         <li><a href="listarCompetidores.php">Competidor</a></li>
         <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">JavaScript</a></li>
+        <li><a href="logout.php">Logout</a></li>
       </ul>
      </div>
     </nav>
