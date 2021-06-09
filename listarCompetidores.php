@@ -1,9 +1,18 @@
 <?php
     include 'menu.php';
 
+    if (isset($_GET['busca']))
+       $busca = trim($_GET['busca']); 
+    else $busca = ''; 
+
     include 'conexao.php'; 
     $pdo = Conexao::conectar(); 
-    $sql = "Select  * from competidor order by nome"; 
+  
+    if ($busca != '')
+         $sql = "Select * from competidor WHERE nome LIKE '%" . $busca .  "%' order by nome ";
+    else $sql = "Select * from competidor order by nome "; 
+
+
     $listaCompetidores = $pdo->query($sql); 
     Conexao::desconectar(); 
 ?>
@@ -35,6 +44,20 @@
                 <i class="material-icons">add</i></a>
             </h3>
      </div>
+
+    <div class="row">
+        <div class="input-field">
+             <form action="listarCompetidores.php" method="GET" id="frmBscCompt" class="col s12">
+                    <div class="input-field col s12">
+                        <label for="lblNome" class="red-text text-dark-4">Informe o nome do Competidor</label>
+                        <input type="text" placeholder="informe o nome do competidor a ser pesquisado" class="form-control col s8" id="txtBusca" name="busca">
+                        <button class="btn waves-effect waves-light col s2" type="submit" > Buscar
+                                <i class="material-icons right">search</i> 
+                        </button>
+                    </div>
+             </form>
+        </div>
+    </div>
 
     <table class="striped" class="responsive-table">
         <tr class="solid orange black-text text-dark-4 align center">

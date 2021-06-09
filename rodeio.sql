@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 01-Maio-2021 às 02:01
+-- Tempo de geração: 09-Jun-2021 às 03:39
 -- Versão do servidor: 10.4.18-MariaDB
 -- versão do PHP: 8.0.3
 
@@ -29,7 +29,6 @@ USE `rodeio`;
 -- Estrutura da tabela `animal`
 --
 
-DROP TABLE IF EXISTS `animal`;
 CREATE TABLE `animal` (
   `id` int(11) NOT NULL,
   `tipoanimal` int(11) NOT NULL,
@@ -54,7 +53,6 @@ INSERT INTO `animal` (`id`, `tipoanimal`, `nome`, `peso`, `idade`, `somanota`) V
 -- Estrutura da tabela `competidor`
 --
 
-DROP TABLE IF EXISTS `competidor`;
 CREATE TABLE `competidor` (
   `id` int(11) NOT NULL,
   `nome` varchar(35) NOT NULL,
@@ -70,8 +68,9 @@ CREATE TABLE `competidor` (
 
 INSERT INTO `competidor` (`id`, `nome`, `cidade`, `estado`, `idade`, `somanota`) VALUES
 (1, 'Samuel Thiago', 'Assis', 'SP', 32, 0),
-(2, 'Rafael de Brito', 'Assis', 'SP', 39, 0),
-(3, 'Davi Henrique', 'Candido Mota', 'SP', 25, 0);
+(2, 'Rafael de Brito', 'Assis', 'SP', 45, 65),
+(5, 'Samuel Camolesi', 'Palmital', 'SP', 8, 87),
+(6, 'Jonas Ladeira', 'Assis', 'SP', 21, 89);
 
 -- --------------------------------------------------------
 
@@ -79,7 +78,6 @@ INSERT INTO `competidor` (`id`, `nome`, `cidade`, `estado`, `idade`, `somanota`)
 -- Estrutura da tabela `montaria`
 --
 
-DROP TABLE IF EXISTS `montaria`;
 CREATE TABLE `montaria` (
   `id` int(11) NOT NULL,
   `data` date NOT NULL,
@@ -102,7 +100,6 @@ INSERT INTO `montaria` (`id`, `data`, `animal`, `competidor`, `notacompetidor`, 
 -- Estrutura da tabela `tipo`
 --
 
-DROP TABLE IF EXISTS `tipo`;
 CREATE TABLE `tipo` (
   `id` int(11) NOT NULL,
   `descricao` varchar(35) NOT NULL
@@ -115,6 +112,27 @@ CREATE TABLE `tipo` (
 INSERT INTO `tipo` (`id`, `descricao`) VALUES
 (1, 'Touro'),
 (2, 'Cavalo');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id` int(11) NOT NULL,
+  `usuario` varchar(10) NOT NULL,
+  `senha` varchar(32) NOT NULL,
+  `nome` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `usuario`, `senha`, `nome`) VALUES
+(1, 'camolesi', '6ce9fed8edd92db4b15414fc479f9d25', 'Almir Camolesi'),
+(2, 'samuca', '2a1a880630a5b0359fa84421801982a8', 'Samuel Camolesi');
 
 --
 -- Índices para tabelas despejadas
@@ -148,6 +166,12 @@ ALTER TABLE `tipo`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Índices para tabela `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT de tabelas despejadas
 --
 
@@ -161,7 +185,7 @@ ALTER TABLE `animal`
 -- AUTO_INCREMENT de tabela `competidor`
 --
 ALTER TABLE `competidor`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de tabela `montaria`
@@ -173,6 +197,12 @@ ALTER TABLE `montaria`
 -- AUTO_INCREMENT de tabela `tipo`
 --
 ALTER TABLE `tipo`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de tabela `usuarios`
+--
+ALTER TABLE `usuarios`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
