@@ -30,6 +30,7 @@
       <a href="#" class="brand-logo right"><img width="60" src="imagens/logo3.png"></a>
       <ul id="nav-mobile" class="left hide-on-med-and-down">
         <li><a href="listarCompetidores.php">Competidor</a></li>
+        <li><a href="frmLancarMontaria.php">Lançar Montaria</a></li>
         <li><a href="badges.html">Components</a></li>
         <li><a href="logout.php">Logout</a></li>
       </ul>
